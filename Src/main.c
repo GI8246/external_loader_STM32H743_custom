@@ -18,8 +18,6 @@ int __io_putchar(int ch)
   */
 int main(void)
 {
-
-
 	/* Reset of all peripherals, Initializes the Flash interface and the Systick. */
 	HAL_Init();
 
@@ -112,6 +110,7 @@ void SystemClock_Config(void)
 	PeriphClkInitStruct.PLL2.PLL2RGE = RCC_PLL2VCIRANGE_3;
 	PeriphClkInitStruct.PLL2.PLL2VCOSEL = RCC_PLL2VCOMEDIUM;
 	PeriphClkInitStruct.PLL2.PLL2FRACN = 0;
+
 	PeriphClkInitStruct.PLL3.PLL3M = 2;
 	PeriphClkInitStruct.PLL3.PLL3N = 12;
 	PeriphClkInitStruct.PLL3.PLL3P = 10;
@@ -120,6 +119,7 @@ void SystemClock_Config(void)
 	PeriphClkInitStruct.PLL3.PLL3RGE = RCC_PLL3VCIRANGE_3;
 	PeriphClkInitStruct.PLL3.PLL3VCOSEL = RCC_PLL3VCOMEDIUM;
 	PeriphClkInitStruct.PLL3.PLL3FRACN = 0;
+
 	PeriphClkInitStruct.FmcClockSelection = RCC_FMCCLKSOURCE_D1HCLK;
 	PeriphClkInitStruct.QspiClockSelection = RCC_QSPICLKSOURCE_D1HCLK;
 	PeriphClkInitStruct.SdmmcClockSelection = RCC_SDMMCCLKSOURCE_PLL;

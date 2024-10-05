@@ -1,0 +1,6 @@
+../Src/Loader_Src.c:14:5:Init	1
+../Src/Loader_Src.c:57:5:Write	2
+../Src/Loader_Src.c:76:5:SectorErase	3
+../Src/Loader_Src.c:110:5:MassErase	2
+../Src/Loader_Src.c:136:10:CheckSum	11
+../Src/Loader_Src.c:216:10:Verify	3

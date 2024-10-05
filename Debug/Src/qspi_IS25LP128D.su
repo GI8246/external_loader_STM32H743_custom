@@ -1,0 +1,10 @@
+../Src/qspi_IS25LP128D.c:131:16:read_status_register	16	static
+../Src/qspi_IS25LP128D.c:235:13:check_WIP	8	static
+../Src/qspi_IS25LP128D.c:350:17:read_JEDEC_ID	16	static
+../Src/qspi_IS25LP128D.c:109:13:write_enable	8	static
+../Src/qspi_IS25LP128D.c:10:6:HAL_QSPI_MspInit	56	static
+../Src/qspi_IS25LP128D.c:80:6:HAL_QSPI_MspDeInit	8	static
+../Src/qspi_IS25LP128D.c:246:10:IS25LP128D_erase_sector	16	static
+../Src/qspi_IS25LP128D.c:276:10:IS25LP128D_program_page	24	static
+../Src/qspi_IS25LP128D.c:308:10:IS25LP128D_read	16	static
+../Src/qspi_IS25LP128D.c:403:6:MX_QSPI_Init	48	static
