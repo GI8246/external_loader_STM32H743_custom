@@ -34,26 +34,26 @@ $(wildcard ../makefile.init) \
 $(wildcard ../makefile.targets) \
 
 
-BUILD_ARTIFACT_NAME := smu_disp_ext_loader
+BUILD_ARTIFACT_NAME := external_loader_STM32H743_custom
 BUILD_ARTIFACT_EXTENSION := elf
 BUILD_ARTIFACT_PREFIX :=
 BUILD_ARTIFACT := $(BUILD_ARTIFACT_PREFIX)$(BUILD_ARTIFACT_NAME)$(if $(BUILD_ARTIFACT_EXTENSION),.$(BUILD_ARTIFACT_EXTENSION),)
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXECUTABLES += \
-smu_disp_ext_loader.elf \
+external_loader_STM32H743_custom.elf \
 
 MAP_FILES += \
-smu_disp_ext_loader.map \
+external_loader_STM32H743_custom.map \
 
 SIZE_OUTPUT += \
 default.size.stdout \
 
 OBJDUMP_LIST += \
-smu_disp_ext_loader.list \
+external_loader_STM32H743_custom.list \
 
 OBJCOPY_BIN += \
-smu_disp_ext_loader.bin \
+external_loader_STM32H743_custom.bin \
 
 
 # All Target
@@ -61,11 +61,11 @@ all:
 	+@$(MAKE) --no-print-directory main-build && $(MAKE) --no-print-directory post-build
 
 # Main-build Target
-main-build: smu_disp_ext_loader.elf secondary-outputs
+main-build: external_loader_STM32H743_custom.elf secondary-outputs
 
 # Tool invocations
-smu_disp_ext_loader.elf smu_disp_ext_loader.map: $(OBJS) $(USER_OBJS) D:\work_STM32_CUBE_IDE\SMU_disp_base_test_STM32H743\smu_disp_ext_loader\STM32H743IITX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "smu_disp_ext_loader.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m7 -T"D:\work_STM32_CUBE_IDE\SMU_disp_base_test_STM32H743\smu_disp_ext_loader\STM32H743IITX_FLASH.ld" -Wl,-Map="smu_disp_ext_loader.map" -Wl,--cref -nostartfiles -nodefaultlibs -nostdlib -static -u,Reset_Handler,--specs=nosys.specs --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+external_loader_STM32H743_custom.elf external_loader_STM32H743_custom.map: $(OBJS) $(USER_OBJS) D:\work_STM32_CUBE_IDE\external\ loader\external_loader_STM32H743_custom\STM32H743IITX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "external_loader_STM32H743_custom.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m7 -T"D:\work_STM32_CUBE_IDE\external loader\external_loader_STM32H743_custom\STM32H743IITX_FLASH.ld" -Wl,-Map="external_loader_STM32H743_custom.map" -Wl,--cref -nostartfiles -nodefaultlibs -nostdlib -static -u,Reset_Handler,--specs=nosys.specs --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -74,23 +74,23 @@ default.size.stdout: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	@echo 'Finished building: $@'
 	@echo ' '
 
-smu_disp_ext_loader.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "smu_disp_ext_loader.list"
+external_loader_STM32H743_custom.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "external_loader_STM32H743_custom.list"
 	@echo 'Finished building: $@'
 	@echo ' '
 
-smu_disp_ext_loader.bin: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-objcopy  -O binary $(EXECUTABLES) "smu_disp_ext_loader.bin"
+external_loader_STM32H743_custom.bin: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objcopy  -O binary $(EXECUTABLES) "external_loader_STM32H743_custom.bin"
 	@echo 'Finished building: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) default.size.stdout smu_disp_ext_loader.bin smu_disp_ext_loader.elf smu_disp_ext_loader.list smu_disp_ext_loader.map
+	-$(RM) default.size.stdout external_loader_STM32H743_custom.bin external_loader_STM32H743_custom.elf external_loader_STM32H743_custom.list external_loader_STM32H743_custom.map
 	-@echo ' '
 
 post-build:
-	cmd.exe /C copy/Y  "smu_disp_ext_loader.elf" "external_loader_SMU_DISP_H743.stldr"
+	cmd.exe /C copy/Y  "external_loader_STM32H743_custom.elf" "external_loader_SMU_DISP_H743.stldr"
 	-@echo ' '
 
 secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST) $(OBJCOPY_BIN)
