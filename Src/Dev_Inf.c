@@ -23,16 +23,16 @@
 #include "Dev_Inf.h"
 
 struct StorageInfo const StorageInfo  =  {
-  "IS25LP128D_STM32H743",       // Device Name + EVAL Board name
-  NOR_FLASH,                  // Device Type
-  0x90000000,                 // Device Start Address
-  0x01000000,                 // Device Size in 16 MBytes
-  0x100,                      // Programming Page Size 256Bytes
-  0xFF,                       // Initial Content of Erased Memory
+  "SMU_DISP_H743_IS25LP128D",  // Device Name + EVAL Board name
+  NOR_FLASH,                   // Device Type
+  0x90000000,                  // Device Start Address
+  0x01000000,                  // Device Size in 16 MBytes
+  0x100,                       // Programming Page Size 256 Bytes
+  0xFF,                        // Initial Content of Erased Memory
 
   // Specify Size and Address of Sectors (view example below)
   {
-    0x00001000, 0x00001000,   // Sector Num : 1024, Sector Size: 128 KBytes
+    0x00001000, 0x00001000,   // Sector Num : 4096, Sector Size: 4 kBytes
   }
 };
 

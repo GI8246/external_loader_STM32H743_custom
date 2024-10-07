@@ -16,3 +16,4 @@
 ../Src/syscalls.c:165:1:_link	1
 ../Src/syscalls.c:171:1:_fork	1
 ../Src/syscalls.c:177:1:_execve	1
+../Src/syscalls.c:182:9:_sbrk	2

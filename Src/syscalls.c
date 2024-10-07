@@ -178,3 +178,18 @@ _execve(char* name, char** argv, char** env) {
     errno = ENOMEM;
     return -1;
 }
+
+caddr_t _sbrk(int incr) {
+    extern char end;       // Defined by the linker
+    static char *heap_end;
+    char *prev_heap_end;
+
+    if (heap_end == 0) {
+        heap_end = &end;
+    }
+
+    prev_heap_end = heap_end;
+    heap_end += incr;
+
+    return (caddr_t)prev_heap_end;
+}

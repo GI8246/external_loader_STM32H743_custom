@@ -1,0 +1,4 @@
+../Src/uart.c:9:6:HAL_UART_MspInit	3
+../Src/uart.c:42:6:HAL_UART_MspDeInit	2
+../Src/uart.c:65:5:_write	1
+../Src/uart.c:72:6:MX_USART1_Init	5

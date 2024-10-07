@@ -12,8 +12,12 @@
 *****************************************************************************
 */
 
+PROVIDE(_init = 0);
+PROVIDE(_fini = 0);
+
 /* Entry Point */
 ENTRY(Init)
+/*ENTRY(Reset_Handler)*/
 
 /* Generate 2 segment for Loader code and device info */
 PHDRS {Loader PT_LOAD ; SgInfo PT_LOAD ; }
