@@ -4,6 +4,7 @@
 *.cyclo
 *.o
 *.su
+*.d
 
 *.bin
 *.elf
