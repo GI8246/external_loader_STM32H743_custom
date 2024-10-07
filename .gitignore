@@ -1,0 +1,19 @@
+# : comments
+
+*.a
+*.cyclo
+*.o
+*.su
+
+*.bin
+*.elf
+*.map
+*.list
+*.stldr
+
+# only ignore the TODO file in the current directory, not subdir/TODO
+/TODO
+
+# ignore all files in the build/ directory
+build/
+
